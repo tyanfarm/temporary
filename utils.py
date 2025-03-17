@@ -152,11 +152,8 @@ def MP_on_graph_gmf(round_user_params, item_num, latent_dim, topk_user_relation_
         aggregated_item_embedding = np.matmul(topk_user_relation_graph, layers_result[-1])
         layers_result.append(aggregated_item_embedding)
 
-    # layers_result = np.stack(layers_result, axis = 0)
-    # aggregated_item_embedding = 1/(1 + layers) * np.sum(layers_result, axis = 0)
-    # print(aggregated_item_embedding.shape)
-    # print(item_embedding.shape)
-    # print(topk_user_relation_graph.shape)
+    layers_result = np.stack(layers_result, axis = 0)
+    aggregated_item_embedding = 1/(1 + layers) * np.sum(layers_result, axis = 0)
     
     item_embedding_dict = {}
     # for user in round_user_params.keys():
