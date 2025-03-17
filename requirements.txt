@@ -3,5 +3,5 @@ torch
 torchaudio
 torchvision
 numpy
-sklearn
+scikit-learn
 tensorboardX
